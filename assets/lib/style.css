@@ -47,7 +47,7 @@ body{
 .gci{
 	font-size: 15px;
 }
-.form-control {
+.gci-input{
     display: block;
     width: 100%;
     height: calc(1.3em + 0.70rem + 1px);
