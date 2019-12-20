@@ -11,25 +11,43 @@
   <link rel="manifest" href="assets/lib/manifest.json">
   <link rel="stylesheet" type="text/css" href="assets/lib/style.css">
 </head>
-<body>
-
-<div class="container-fluid">
+<body class="bg-light">
   <nav class="navbar fixed-top navbar-light bg-grey cus-shadow px-2 py-0">
    <div class="col-4">
        <a class="navbar-brand" href="#">
-        <h4><b>Supplier Self-Registration</b></h4>
-        <button class="hvr-grow-shadow" style="font-size: 14px;background-color: gainsboro;">Send</button>
-        <span style="color: #efefef">|</span>
-        <button class="hvr-grow-shadow" style="font-size: 14px;background-color: gainsboro;">Close</button>
+        <h4 class="mb-1"><b>Supplier Self-Registration</b></h4>
+        <button class="btn btn-nav hvr-grow-shadow px-3 py-1">Send</button>
+        <span style="color: #4a89bd">|</span>
+        <button class="btn btn-nav hvr-grow-shadow px-3 py-1">Close</button>
        </a>
    </div>
     <div class="col-4">
       <!-- <a class="ml-auto" href="home.html"><img class="" src="assets/images/logo_2.png" style="width:150px;height: 38px"></a> -->
-    </div> 
-    <div class="col-4">
-      <p class="mb-0 text-center py-1 px-2"><span></span></p>
     </div>
-  </nav>
+    <div class="col-4"> </div>
+    <div class="dropdown dropleft" style="">
+      <button type="button" class="border hvr-grow-shadow dropdown-toggle" data-toggle="dropdown">
+        <i class="fas fa-question-circle text-primary"></i>
+      </button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="#">Help Center</a>
+        <a class="dropdown-item" href="#">Hide Quick Help</a>
+      </div>
+    </div>
+  </nav><br><br><br><br>
+<div class="container-fluid">
+  <div class="jumbotron text-center p-2 mb-0">
+    <img class="" src="assets/images/logotrans.png" style="width:auto;height: 80px">
+  </div>
+  <div class="row">
+    <div class="col-md-10">
+      <h4 class="mb-0 pt-3">Welcome to NUPCO supplier Registration Portal</h4>
+      <p>&ensp;Welcome to the online Registration portal for Suppliers for National Unified Procurement Company for Medical Supplies "NUPCO". Please fill the online registration form given below and click on Send button to submit the same. Kndly read the attached user manual .Prepare required data and attachment documents list before filling this registration form. </p>
+      <p class="mb-0">* Fields marked with an asterisk are mandatory. </p>
+      <button class="btn cus-btn hvr-grow-shadow"><i class="fas fa-clipboard-list text-white"></i> User manual</button>
+    </div>
+    <div class="col-md-2"></div>
+  </div>
 </div>
 
 <!-- script files -->
