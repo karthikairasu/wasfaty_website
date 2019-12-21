@@ -77,7 +77,7 @@
           <div class="input-group mb-3">
           <input type="text" class="form-control gci-input">
             <div class="input-group-append" style="height: 33px">
-              <button class="btn btn-info w-100">submit</button>
+              <button class="btn btn-info w-100" style="line-height: 1;">submit</button>
             </div>
           </div>
         </div>
@@ -92,13 +92,13 @@
       <div class="form-group row">
         <label class="col-md-3 lab-name star">Country</label>
         <div class="col-md-9">
-          <input type="text" class="form-control gci-input">
+          <select class="crs-country form-control gci-input" data-region-id="one"></select>
         </div>
       </div>
       <div class="form-group row">
         <label class="col-md-3 lab-name">Region</label>
         <div class="col-md-9">
-          <input type="text" class="form-control gci-input">
+          <select id="one" class="form-control gci-input"></select>
         </div>
       </div>
       <div class="form-group row">
@@ -279,7 +279,7 @@
       <div class="form-group row">
         <label class="col-md-3 lab-name star">Country</label>
         <div class="col-md-9">
-          <input type="text" class="form-control gci-input">
+          <select class="crs-country form-control gci-input" data-region-id="one"></select>
         </div>
       </div>
       <div class="form-group row">
@@ -296,6 +296,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="assets/lib/crs.min.js"></script>
 
 </body>
 </html>

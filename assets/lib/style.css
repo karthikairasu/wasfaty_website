@@ -81,3 +81,9 @@ body{
     border-radius: .25rem;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
+.cpi .row .form-group{
+	margin-bottom: 8px;
+}
+.cpi{
+	font-size: 15px;
+}
