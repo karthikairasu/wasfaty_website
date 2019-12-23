@@ -296,12 +296,12 @@
     <div class="card border-0 bg-light">
       <div class="card-header mx-2 pl-1" id="heading-1" style="border-bottom: 3px solid #d9d9d9;">
         <h4 class="mb-0 updown">
-          <a role="button" class="text-dark" data-toggle="collapse" href="#collapse-1" aria-expanded="true" aria-controls="collapse-1">
+          <a role="button" class="collapsed text-dark" data-toggle="collapse" href="#collapse-1" aria-expanded="flase" aria-controls="collapse-1">
             Additional Contact Person Information 1
           </a>
         </h4>
       </div>
-      <div id="collapse-1" class="collapse show" data-parent="#accordion" aria-labelledby="heading-1">
+      <div id="collapse-1" class="collapse" data-parent="#accordion" aria-labelledby="heading-1">
         <div class="card-body p-1">
            <div class="form-group text-center pt-2">
               <button class="btn cus-btn hvr-grow-shadow btn-outline-info">Copy Company Data</button>
@@ -492,6 +492,105 @@
     </div>
   </div>
 </div>
+
+<div class="container-fluid my-3 cpi">
+  <div class="row m-0">
+    <div class="col-md-9">
+      <h4>Submitter Information</h4>
+    </div><!--------col-md-9 close----------------->
+    <div class="col-md-3 text-right">
+      
+    </div><!--------col-md-3 close----------------->
+
+  </div><!--------row close----------------->
+  <hr class="my-1 mx-3" style="border-top: 3px solid #d9d9d9;">
+  <div class="form-group text-center pt-2">
+    <button class="btn cus-btn hvr-grow-shadow btn-outline-info">Copy Company Data</button>
+  </div>
+  <div class="row m-0 my-4">
+    <div class="col-md-6">
+      <div class="form-group row">
+        <label class="col-md-3 lab-name star">First Name</label>
+        <div class="col-md-9">
+          <input type="text" class="form-control cpi-input" required>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-md-3 lab-name star">Last Name</label>
+        <div class="col-md-9">
+          <input type="text" class="form-control cpi-input" required>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-md-3 lab-name star">Form of Address</label>
+        <div class="col-md-9">
+          <input type="text" class="form-control cpi-input" required>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-md-3 lab-name star">Position</label>
+        <div class="col-md-9">
+          <input type="text" class="form-control cpi-input" required>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-md-3 lab-name star">Department</label>
+        <div class="col-md-9">
+          <input type="text" class="form-control cpi-input" required>
+        </div>
+      </div>
+    </div><!--------col-md-6 close----------------->
+    <div class="col-md-6">
+      <div class="form-group row">
+        <label class="col-md-3 lab-name star">Phone Number</label>
+        <div class="col-md-9">
+          <div class="input-group mb-3">
+          <input type="text" class="form-control cpi-input w-50" required>
+          <input type="text" class="form-control cpi-input" required>
+            <div class="input-group-append">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-md-3 lab-name">Fax Number</label>
+        <div class="col-md-9">
+          <div class="input-group mb-3">
+          <input type="text" class="form-control cpi-input w-50">
+          <input type="text" class="form-control cpi-input">
+            <div class="input-group-append">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-md-3 lab-name star">E-Mail Address</label>
+        <div class="col-md-9">
+          <input type="text" class="form-control cpi-input" required>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-md-3 lab-name star">Language</label>
+        <div class="col-md-9">
+          <input type="text" class="form-control gci-input" value="EN" readonly required>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-md-3 lab-name star">Country</label>
+        <div class="col-md-9">
+          <select class="crs-country form-control gci-input" data-region-id="one" required></select>
+        </div>
+      </div>
+      <!-- <div class="form-group row">
+        <label class="col-md-3 lab-name star">Mobile Number</label>
+        <div class="col-md-9">
+          <input type="text" class="form-control cpi-input" required>
+        </div>
+      </div> -->
+    </div><!--------col-md-6 close----------------->
+  </div><!--------row close----------------->
+</div>
+
 <div class="container-fluid my-3 vdt">
   <div class="row m-0">
     <div class="col-md-9">
