@@ -87,3 +87,18 @@ body{
 .cpi{
 	font-size: 15px;
 }
+.updown > a {
+  display: block;
+  position: relative;
+  text-decoration: none;
+}
+.updown > a:after {
+  content: "\f078"; /* fa-chevron-down */
+  font-family: 'Font Awesome 5 Free';
+  position: absolute;
+  right: 0;
+  font-weight: 900;
+}
+.updown > a[aria-expanded="true"]:after {
+  content: "\f077"; /* fa-chevron-up */
+}
