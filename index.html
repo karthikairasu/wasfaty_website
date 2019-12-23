@@ -295,11 +295,11 @@
   <div id="accordion" class="px-2"> 
     <div class="card border-0 bg-light">
       <div class="card-header mx-2" id="heading-1" style="border-bottom: 3px solid rgba(0, 0, 0, 0.28);">
-        <h5 class="mb-0 updown">
+        <h4 class="mb-0 updown">
           <a role="button" class="text-dark" data-toggle="collapse" href="#collapse-1" aria-expanded="true" aria-controls="collapse-1">
             Additional Contact Person Information 1
           </a>
-        </h5>
+        </h4>
       </div>
       <div id="collapse-1" class="collapse show" data-parent="#accordion" aria-labelledby="heading-1">
         <div class="card-body p-1">
@@ -394,11 +394,11 @@
     </div>
     <div class="card border-0 bg-light">
       <div class="card-header mx-2" id="heading-2" style="border-bottom: 3px solid rgba(0, 0, 0, 0.28);">
-        <h5 class="mb-0 updown">
+        <h4 class="mb-0 updown">
           <a class="collapsed text-dark" role="button" data-toggle="collapse" href="#collapse-2" aria-expanded="false" aria-controls="collapse-2">
             Additional Contact Person Information 2
           </a>
-        </h5>
+        </h4>
       </div>
       <div id="collapse-2" class="collapse" data-parent="#accordion" aria-labelledby="heading-2">
         <div class="card-body p-1">
@@ -505,27 +505,61 @@
   <hr class="my-1 mx-3" style="border-top: 3px solid #adb5bd;">
   <div class="row m-0 my-4">
     <div class="col-md-2">
-      <input type="checkbox" id="manufacturer" name="manufacturer" value="Apple">
+      <input type="checkbox" id="manufacturer" name="manufacturer" value="manufacturer">
       <label for="manufacturer">Manufacturer</label>
     </div><!--------col-md-2 close----------------->
     <div class="col-md-2">
-      <input type="checkbox" id="contractor" name="contractor" value="Apple">
+      <input type="checkbox" id="contractor" name="contractor" value="contractor">
       <label for="contractor">Contractor</label>
     </div><!--------col-md-2 close----------------->
     <div class="col-md-2">
-      <input type="checkbox" id="trader" name="trader" value="Apple">
+      <input type="checkbox" id="trader" name="trader" value="trader">
       <label for="trader">Trader</label>
     </div><!--------col-md-2 close----------------->
     <div class="col-md-2">
-      <input type="checkbox" id="agent" name="agent" value="Apple">
+      <input type="checkbox" id="agent" name="agent" value="agent">
       <label for="agent">Agent</label>
     </div><!--------col-md-2 close----------------->
     <div class="col-md-1 px-0">
-      <input type="checkbox" id="others" name="others" value="Apple">
+      <input type="checkbox" id="others" name="others" value="others">
       <label for="others">Others</label>
     </div><!--------col-md-2 close----------------->
     <div class="col-md-3 pl-0">
       <input class="form-control vdt-input" type="" name="">
+    </div><!--------col-md-2 close----------------->
+  </div><!--------row close----------------->
+</div>
+<div class="container-fluid my-3 atg">
+  <div class="row m-0">
+    <div class="col-md-9">
+      <h4>Account Group</h4>
+    </div><!--------col-md-9 close----------------->
+    <div class="col-md-3 text-right">
+      
+    </div><!--------col-md-3 close----------------->
+
+  </div><!--------row close----------------->
+  <hr class="my-1 mx-3" style="border-top: 3px solid #adb5bd;">
+  <div class="row m-0 my-4">
+    <div class="col-md-3">
+      <input type="radio" id="domestic" name="radio-group">
+      <label for="domestic">Medical Domestic Vendor</label>
+    </div><!--------col-md-2 close----------------->
+    <div class="col-md-3">
+      <input type="radio" id="foreign" name="radio-group">
+      <label for="foreign">Medical Foreign Vendor</label>
+    </div><!--------col-md-2 close----------------->
+    <div class="col-md-3">
+      <input type="radio" id="nondomestic" name="radio-group">
+      <label for="nondomestic">Non Medical Domestic Vendor</label>
+    </div><!--------col-md-2 close----------------->
+    <div class="col-md-3">
+      <input type="radio" id="nonforeign" name="radio-group">
+      <label for="nonforeign">Non Medical Foreign Vendor</label>
+    </div><!--------col-md-2 close----------------->
+    <div class="col-md-3">
+      <input type="radio" id="pharmacies" name="radio-group">
+      <label for="pharmacies">Community Pharmacies</label>
     </div><!--------col-md-2 close----------------->
   </div><!--------row close----------------->
 </div>
