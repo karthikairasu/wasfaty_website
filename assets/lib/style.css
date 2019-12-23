@@ -102,3 +102,22 @@ body{
 .updown > a[aria-expanded="true"]:after {
   content: "\f077"; /* fa-chevron-up */
 }
+/*==========Vendor type=======*/
+.vdt-input{
+    display: block;
+    width: 100%;
+    height: calc(1.3em + 0.70rem + 1px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.vdt .row .form-group{
+	margin-bottom: 8px;
+}
