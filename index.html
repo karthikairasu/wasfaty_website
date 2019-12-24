@@ -820,7 +820,59 @@
     </div><!--------col-md-6 close----------------->
   </div><!--------row close----------------->
 </div>
+<div class="container-fluid my-3 bnk_detail">
+  <div class="row m-0">
+    <div class="col-md-9">
+      <h4>Bank Details</h4>
+    </div><!--------col-md-9 close----------------->
+    <div class="col-md-3 text-right">
+      
+    </div><!--------col-md-3 close----------------->
 
+  </div><!--------row close----------------->
+  <hr class="my-1 mx-3" style="border-top: 3px solid #d9d9d9;">
+  <div class="row m-0 my-4 px-2">
+    <table class="table table-borderless">
+      <thead>
+        <tr class="text-center">
+          <th width="10%">Country</th>
+          <th width="10%">Bank Key</th>
+          <th width="15%">Bank Name</th>
+          <th width="15%">Swift Code</th>
+          <th width="15%">Bank Account</th>
+          <th width="15%">Account Holder</th>
+          <th width="10%">IBAN</th>
+          <th width="10%">Currency</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <select class="crs-country form-control gci-input" data-region-id="one" required></select>
+          </td>
+          <td><input type="text" class="form-control cpi-input" name=""></td>
+          <td><input type="text" class="form-control cpi-input" name=""></td>
+          <td><input type="text" class="form-control cpi-input" name=""></td>
+          <td><input type="text" class="form-control cpi-input" name=""></td>
+          <td><input type="text" class="form-control cpi-input" name=""></td>
+          <td><input type="text" class="form-control cpi-input" name=""></td>
+          <td>
+            <select type="text" class="form-control cpi-input " name="">
+              <option>Select a Currency</option>
+              <option>USD</option>
+              <option>AED</option>
+              <option>SAR</option>
+              <option>GBP</option>
+            </select>
+          </td>
+          <td>
+            <button class="shadow"><i class="fas fa-plus-circle" style="font-size: 17px;color: blue"></i></button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div><!--------row close----------------->
+</div>
 
 <!-- script files -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

@@ -222,3 +222,7 @@ body{
     -webkit-transform: scale(1);
     transform: scale(1);
 }
+/*==========bank detail=======*/
+.bnk_detail .table td, .table th {
+    padding: 2px 3px;
+}
