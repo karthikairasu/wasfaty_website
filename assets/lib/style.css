@@ -223,6 +223,22 @@ body{
     transform: scale(1);
 }
 /*==========bank detail=======*/
-.bnk_detail .table td, .table th {
+.bnk_detail .table td, .bnk_detail .table th {
     padding: 2px 3px;
+}
+/*==========Vat detail=======*/
+.vat_detail .table th {
+    background-color: #d5d5d5;
+    font-weight: lighter;
+    border: 1px solid #c8c8c8;
+}
+.vat_detail .table td {
+    background-color: white;
+    border: 1px solid #c8c8c8;
+}
+.vat_detail .cus-btn{
+	font-size: 14px;
+    background-color: #584d7d;
+    border: 1px solid gray;
+    color: white;
 }
