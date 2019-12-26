@@ -242,3 +242,11 @@ body{
     border: 1px solid gray;
     color: white;
 }
+#footer{
+	background-image: url(../images/footer.png);
+	background-position: top;
+	background-size: cover;
+	background-repeat: no-repeat;
+	width: 100%;
+	padding-top:100px;
+}
