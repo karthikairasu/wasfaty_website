@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Wasfaty</title>
+  <meta name="theme-color" content="#557eb0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0 shrink-to-fit=no, user-scalable=0">
+  <link rel="icon" type="image/png" href="assets/images/logo-icon.png" sizes="194x194">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed|Titillium+Web|Changa|Merriweather|Ubuntu&display=swap" rel="stylesheet">
+  <link rel="manifest" href="assets/lib/manifest.json">
+  <link rel="stylesheet" type="text/css" href="assets/lib/style.css">
+  <!--------table style lib------------------------>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
+  <style type="text/css">
+    .sidenav{
+      height: 100%;
+      position: fixed;
+      padding-top: 60px;
+      width:15%;
+      z-index: 99!important
+    }
+    .main{
+      height: 100%;
+      position: fixed;
+      width: 85%;
+      left: 15%;
+      overflow-y: auto;
+    }
+    .sidenav .list-group-item {
+      position: relative;
+      display: block;
+      padding: .75rem 1.25rem;
+      margin-bottom: -1px;
+      background-color: #e2e2e2;
+      border: none;
+    }
+    .sidenav .list-group-item-action:focus, .list-group-item-action:hover {
+        z-index: 1;
+        color: #495057;
+        text-decoration: none;
+        background-color: #f8f9fa;
+        padding-left: 30px;
+    }
+    .topsecnav{
+        position: fixed;
+        top:72px;
+        left: 15%;
+        width: 100%;
+        background: white;
+        z-index: 99!important;
+        overflow-x: auto;
+        margin-right: 40px;
+    }
+    .topsecnav .navbar-nav .nav-link {
+        padding :1px 25px; 
+    }
+    .topsecnav .navbar-nav .nav-item .nav-link:hover{
+        background: #92b3d2!important;
+        color: white!important;
+    }
+    .topsecnav .navbar-nav .nav-item.active > .nav-link {
+        background: #92b3d2!important;
+        color: white!important;
+    }
+    .topsecnav .navbar-nav{
+        text-align: center;
+    }
+    #example_wrapper{
+        width: 100%;
+        font-size: 13px;
+        text-align: center;
+    }
+    #example_wrapper .table th, .table td {
+        padding: 6px 4px;
+        vertical-align: top;
+        border-top: 1px solid #dee2e6;
+    }
+  </style>
+</head>
+<body class="bg-light">
+  <nav class="navbar fixed-top navbar-light bg-white cus-shadow px-2 py-0">
+   <div class="col-4">
+       <a class="navbar-brand py-0" href="#">
+         <img src="assets/images/logo.png" height="70px" width="auto">
+       </a>
+   </div>
+    <div class="col-4">
+      <!-- <a class="ml-auto" href="home.html"><img class="" src="assets/images/logo_2.png" style="width:150px;height: 38px"></a> -->
+    </div>
+    <div class="col-4 text-right"> 
+        <img src="assets/images/NUPCO-LOGO.png" height="50px" width="auto">
+    </div>
+  </nav><br><br><br>
+<div class="container-fluid px-0">
+  <div class="row mx-0">
+    <div class="sidenav px-0 bg-grey">
+      <div class="list-group">
+        <a href="#" class="list-group-item list-group-item-action">Invoice List</a>
+        <a href="#" class="list-group-item list-group-item-action">Medical List</a>
+        <a href="#" class="list-group-item list-group-item-action">Inventory</a>
+        <a href="#" class="list-group-item list-group-item-action">Sales</a>
+      </div>
+    </div>
+    <div class="main px-3 py-5">
+      <nav class="navbar navbar-expand navbar-light bg-white shadow topsecnav py-0 px-0">
+        <a class="navbar-brand mr-0" href="#" style=""></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">
+                <img src="assets/images/invoice.png" style="height:30px;width:auto;"> <br> 
+                Invoices</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+              <img src="assets/images/billing.png" style="height:30px;width:auto;"><br> 
+              Billing</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+              <img src="assets/images/admin.png" style="height:30px;width:auto;"><br> 
+              Admin</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+              <img src="assets/images/mail.png" style="height:30px;width:auto;"><br> 
+              Mails</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+              <img src="assets/images/security.png" style="height:30px;width:auto;"><br> 
+              Security</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+              <img src="assets/images/analytics.png" style="height:30px;width:auto;"><br> 
+              Analytics</a>
+            </li>
+            <li class="nav-item" style="margin-right:100px;">
+              <a class="nav-link" href="#">
+              <img src="assets/images/market.png" style="height:30px;width:auto;"><br> 
+              Marketplace</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="container my-4">
+       
+      </div>
+    </div>
+  </div>
+  
+  </div>
+</div>
+
+
+<!-- script files -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="assets/lib/crs.min.js"></script>
+  <script src="assets/lib/script.js"></script>
+  <!--------table style lib------------------------>
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+        $('#example').DataTable();
+    } );
+  </script>
+  <script>
+    $( '.topsecnav .navbar-nav .nav-link' ).on( 'click', function () {
+      $( '.topsecnav .navbar-nav' ).find( '.nav-item.active' ).removeClass( 'active' );
+      $( this ).parent( '.nav-item' ).addClass( 'active' );
+    });
+  </script>
+</body>
+</html>
