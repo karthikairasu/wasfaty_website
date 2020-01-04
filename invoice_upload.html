@@ -14,19 +14,19 @@
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
   <style type="text/css">
-    .sidenav{
-      height: 100%;
-      position: fixed;
-      padding-top: 60px;
-      width:15%;
-      z-index: 99!important
-    }
     .main{
       height: 100%;
       position: fixed;
       width: 85%;
       left: 15%;
       overflow-y: auto;
+      background: #a4b5c5;
+    }
+    .sidenav{
+      height: 100%;
+      position: fixed;
+      width:15%;
+      z-index: 99!important;
     }
     .sidenav .list-group-item {
       position: relative;
@@ -35,9 +35,17 @@
       margin-bottom: -1px;
       background-color: #e2e2e2;
       border: none;
+      font-weight: 600;
+      color: #1f73d8;
     }
-    .sidenav .list-group-item-action:focus, .list-group-item-action:hover {
-        z-index: 1;
+    .sidenav .list-group-item.active {
+        color: #495057;
+        text-decoration: none;
+        background-color: #f8f9fa;
+        padding-left: 30px;
+        font-weight: 600;
+    }
+    .sidenav .list-group-item:hover {
         color: #495057;
         text-decoration: none;
         background-color: #f8f9fa;
@@ -45,7 +53,7 @@
     }
     .topsecnav{
         position: fixed;
-        top:72px;
+        top:76px;
         left: 15%;
         width: 100%;
         background: white;
@@ -68,19 +76,112 @@
         text-align: center;
     }
     #example_wrapper{
-        width: 100%;
-        font-size: 13px;
+        width: 75%;
+        font-size: 12px;
         text-align: center;
     }
     #example_wrapper .table th, .table td {
-        padding: 6px 4px;
+        padding: 4px 2px;
         vertical-align: top;
         border-top: 1px solid #dee2e6;
+    }
+    table.dataTable thead .sorting:first-child:before, table.dataTable thead .sorting_asc:first-child:before, table.dataTable thead .sorting_desc:first-child:before, table.dataTable thead .sorting_asc_disabled:first-child:before, table.dataTable thead .sorting_desc_disabled:first-child:before{
+    display: none;
+   }
+   table.dataTable thead .sorting:first-child:after, table.dataTable thead .sorting_asc:first-child:after, table.dataTable thead .sorting_desc:first-child:after, table.dataTable thead .sorting_asc_disabled:first-child:after, table.dataTable thead .sorting_desc_disabled:first-child:after  {
+    display: none;
+   }
+    /*========drag and drop============*/
+    .wrapper {
+      width: 100%;
+      height: 100%;
+    }
+
+    .drop {
+      width: 96%;
+      height: 96%;
+      border: 3px dashed #DADFE3;
+      border-radius: 15px;
+      overflow: hidden;
+      text-align: center;
+      background: white;
+      -webkit-transition: all 0.5s ease-out;
+      -moz-transition: all 0.5s ease-out;
+      transition: all 0.5s ease-out;
+      margin: auto;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      /*&:hover
+       * cursor: pointer
+       * background: #f5f5f5 */
+    }
+    .drop .cont {
+      font-size: 11px;
+      width: 100%;
+      height: 100%;
+      color: #8E99A5;
+      -webkit-transition: all 0.5s ease-out;
+      -moz-transition: all 0.5s ease-out;
+      transition: all 0.5s ease-out;
+      margin: auto;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+    }
+    .drop .cont i {
+      font-size: 400%;
+      color: #8E99A5;
+      position: relative;
+    }
+    .drop .cont .tit {
+      font-size: 400%;
+      text-transform: uppercase;
+    }
+    .drop .cont .desc {
+      color: #A4AEBB;
+    }
+    .drop .cont .browse {
+      margin: 10px 25%;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 5px;
+      background: #09f;
+    }
+    .drop input {
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+      background: red;
+      opacity: 0;
+      margin: auto;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+    }
+
+    #list {
+      width: 100%;
+      text-align: left;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+    #list .thumb {
+      height: 75px;
+      border: 1px solid #323a44;
+      margin: 10px 5px 0 0;
     }
   </style>
 </head>
 <body class="bg-light">
-  <nav class="navbar fixed-top navbar-light bg-white cus-shadow px-2 py-0">
+  <nav class="navbar fixed-top navbar-light bg-white cus-shadow px-2 py-0" style="border-top: 4px solid #00BCD4;">
    <div class="col-4">
        <a class="navbar-brand py-0" href="#">
          <img src="assets/images/logo.png" height="70px" width="auto">
@@ -89,19 +190,25 @@
     <div class="col-4">
       <!-- <a class="ml-auto" href="home.html"><img class="" src="assets/images/logo_2.png" style="width:150px;height: 38px"></a> -->
     </div>
-    <div class="col-4 text-right"> 
-        <img src="assets/images/NUPCO-LOGO.png" height="50px" width="auto">
+    <div class="col-4 text-right" style="font-size: 11px;font-weight: 600"> 
+        <img class="my-1" src="assets/images/NUPCO-LOGO.png" height="40px" width="auto"><br>
+        <span style="color:#197c89">White Pharmacy</span> |
+        <span style="color:#197c89;">White Pharmacy</span> |
+        <span style="color:#8a8c8d;">Cycle end Dec 31</span> |
+        <span style="color:#8a8c8d;">Help</span>
     </div>
   </nav><br><br><br>
 <div class="container-fluid px-0">
   <div class="row mx-0">
     <div class="sidenav px-0 bg-grey">
-      <div class="list-group">
-        <a href="#" class="list-group-item list-group-item-action">Invoice List</a>
-        <a href="#" class="list-group-item list-group-item-action">Medical List</a>
-        <a href="#" class="list-group-item list-group-item-action">Inventory</a>
-        <a href="#" class="list-group-item list-group-item-action">Sales</a>
-      </div>
+      <ul class="list-group">
+        <li  class="list-group-item bg-white" style="padding: 18px 20px;">
+          <i class="fas fa-minus-square"></i></li>
+        <li  class="list-group-item active my-2">Invoice List</li>
+        <li class="list-group-item">Medical List</li>
+        <li class="list-group-item">Inventory</li>
+        <li class="list-group-item">Sales</li>
+    </ul>
     </div>
     <div class="main px-3 py-5">
       <nav class="navbar navbar-expand navbar-light bg-white shadow topsecnav py-0 px-0">
@@ -150,9 +257,62 @@
           </ul>
         </div>
       </nav>
-      <div class="container my-4">
-       
-      </div>
+      <div class="container bg-white my-4" style="height: 90%;">
+        <h5 class="text-center bg-grey">New Invoice Upload</h5>
+        <div class="row mx-0">
+          <div class="col-md-6">
+            <div class="form-group mt-4">
+              <button class="btn btn-default" style="background-color: #3276b1;color: white">File Upload</button> &ensp;<span style="color:#197c89">Help</span>
+            </div>
+            <div class="card p-4" style="background: #e6f1fb">
+              <p class="mb-0">1. Specify an optional file description.</p>
+              <p class="mb-0">2. Select the file to upload using the Browse button.</p>
+              <p class="mb-0">3. Click the Upload button to upload the file.</p>
+    
+              <div class="form-group row mt-3">
+                <label class="col-md-4">File Description:</label>
+                <input class="form-control col-md-8" type="text" name="">
+              </div>
+              <div class="form-group mb-0 mt-3">
+                <input type="file" name="">
+              </div>
+              <div class="form-group mt-3">
+                <button class="btn btn-info">Upload</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card mt-4 bg-light p-3">
+              <h6 class="text-center"><strong>Upload Files</strong></h6>
+              <div class="card border-0 p-5" style="height: 200px">
+                <div class="wrapper">
+                  <div class="drop">
+                    <div class="cont">
+                      <i class="fa fa-cloud-upload"></i>
+                      <div class="tit">
+                        Drag & Drop
+                      </div>
+                      <div class="desc">
+                        your files to Assets, or 
+                      </div>
+                      <div class="browse">
+                        click here to browse
+                      </div>
+                    </div>
+                    <output id="list"></output><input id="files" multiple="true" name="files[]" type="file" />
+                  </div>
+                </div>
+              </div>
+              <div class="card border-0 p-2 bg-white mt-2" style="height: 100px">
+                
+              </div>
+              <div class="form-group text-center my-1">
+                <button class="btn btn-info"><i class="fas fa-cloud-upload-alt"></i> Upload</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><br>
     </div>
   </div>
   
@@ -180,6 +340,73 @@
       $( '.topsecnav .navbar-nav' ).find( '.nav-item.active' ).removeClass( 'active' );
       $( this ).parent( '.nav-item' ).addClass( 'active' );
     });
+  </script>
+  <script type="text/javascript">
+        $(function(){
+        console.log('ready');
+        
+        $('.sidenav .list-group li').click(function(e) {
+            e.preventDefault()
+            
+            $that = $(this);
+            
+            $('.sidenav .list-group').find('li').removeClass('active');
+            $that.addClass('active');
+        });
+    })
+  </script>
+  <script type="text/javascript">
+    var drop = $("input");
+drop.on('dragenter', function (e) {
+  $(".drop").css({
+    "border": "4px dashed #09f",
+    "background": "rgba(0, 153, 255, .05)"
+  });
+  $(".cont").css({
+    "color": "#09f"
+  });
+}).on('dragleave dragend mouseout drop', function (e) {
+  $(".drop").css({
+    "border": "3px dashed #DADFE3",
+    "background": "transparent"
+  });
+  $(".cont").css({
+    "color": "#8E99A5"
+  });
+});
+
+
+
+function handleFileSelect(evt) {
+  var files = evt.target.files; // FileList object
+
+  // Loop through the FileList and render image files as thumbnails.
+  for (var i = 0, f; f = files[i]; i++) {
+
+    // Only process image files.
+    if (!f.type.match('image.*')) {
+      continue;
+    }
+
+    var reader = new FileReader();
+
+    // Closure to capture the file information.
+    reader.onload = (function(theFile) {
+      return function(e) {
+        // Render thumbnail.
+        var span = document.createElement('span');
+        span.innerHTML = ['<img class="thumb" src="', e.target.result,
+                          '" title="', escape(theFile.name), '"/>'].join('');
+        document.getElementById('list').insertBefore(span, null);
+      };
+    })(f);
+
+    // Read in the image file as a data URL.
+    reader.readAsDataURL(f);
+  }
+}
+
+$('#files').change(handleFileSelect);
   </script>
 </body>
 </html>
