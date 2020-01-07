@@ -256,21 +256,23 @@
   <div class="container-fluid d-flex justify-content-center mt-5 mb-2">
     <div class="form-collection">
     <div class="card elevation-3 limit-width log-in-card above">
+      <form action="pharmacy_dash.html" method="post"> 
       <div class="card-header text-center p-1">
         <img src="assets/images/logotrans.png" height="70px" width="auto">
       </div>
       <div class="card-body">
         <div class="input-group email">
-          <input type="text" placeholder="Email"/>
+          <input type="text" placeholder="Email" required />
         </div>
         <div class="input-group password">
-          <input type="password" placeholder="Password"/>
+          <input type="password" placeholder="Password" required />
         </div>
         <!-- <a href="#" class="box-btn">Forgot Password?</a> -->
       </div>
       <div class="card-footer">
         <button type="submit" class="login-btn">Log in</button>
       </div>
+      </form>
     </div>
 
     <div class="card elevation-2 limit-width sign-up-card below turned">
