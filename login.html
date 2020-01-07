@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Wasfaty</title>
+  <meta name="theme-color" content="#557eb0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0 shrink-to-fit=no, user-scalable=0">
+  <link rel="icon" type="image/png" href="assets/images/logo-icon.png" sizes="194x194">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed|Titillium+Web|Changa|Merriweather|Ubuntu&display=swap" rel="stylesheet">
+  <link rel="manifest" href="assets/lib/manifest.json">
+  <link rel="stylesheet" type="text/css" href="assets/lib/style.css">
+  <link rel="stylesheet" type="text/css" href="assets/lib/style2.css">
+  <style type="text/css">
+    .form-collection {
+      width: 350px;
+      height: 350px;
+    }
+
+    .limit-width {
+      width: 300px;
+    }
+
+    .absolute-footer {
+      bottom: 0;
+      left: 0;
+      position: absolute;
+      z-index: 1;
+      text-align: center;
+      font-family: "Roboto", sans-serif;
+      font-size: 27.2px;
+      font-size: 1.7rem;
+      font-weight: 300;
+      padding: 15px;
+      background: rgba(0, 0, 0, 0.4);
+      color: #fff;
+    }
+
+    .form-collection {
+      z-index: 2;
+    }
+
+    /*Styling Card */
+    .card {
+      font-family: "Open Sans", sans-serif;
+      background: #fff;
+      position: absolute;
+      -webkit-transition: 0.3s ease all;
+      transition: 0.3s ease all;
+    }
+
+    .card-body {
+      padding: 20px;
+    }
+
+    .box-btn {
+      text-decoration: none;
+      text-align: center;
+      text-transform: uppercase;
+      display: block;
+      padding: 15px;
+      font-size: 16px;
+      font-weight: 500;
+      color: #444;
+      background: rgba(0, 0, 0, 0);
+      -webkit-transition: 0.2s ease all;
+      transition: 0.2s ease all;
+      border-radius: 3px;
+    }
+    .box-btn:hover {
+      background: rgba(0, 0, 0, 0.06);
+    }
+    .box-btn:active {
+      background: rgba(0, 0, 0, 0.1);
+    }
+
+    .input-group {
+      border: 2px solid #eee;
+      position: relative;
+      background: #eee;
+      margin: 17px 0;
+      border-radius: 2px;
+      overflow: hidden;
+      padding: 10px;
+    }
+    .input-group input {
+      border: none;
+      background: transparent;
+      width: 100%;
+      outline: none;
+      font-weight: 500;
+      font-family: "Open Sans", sans-serif;
+      font-size: 16px;
+    }
+    .input-group label {
+      position: absolute;
+      top: 10px;
+      left: 0;
+      padding-left: 10px;
+      font-weight: 500;
+      color: #aaa;
+    }
+
+    .card-footer button {
+      width: 100%;
+      padding: 12px;
+      font-size: 24px;
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      font-weight: 600;
+      background: #3276B1;
+      border: none;
+      color: #fff;
+      box-shadow: none;
+      outline: none;
+      cursor: pointer;
+    }
+
+    /*Animation Classes And Prerequisits */
+    .above {
+      z-index: 1;
+    }
+
+    .below {
+      z-index: 0;
+    }
+
+    .turned {
+      opacity: 0.8;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+    }
+
+    .sign-up-card, .log-in-card {
+      box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+    }
+
+    .sign-up-card.turned {
+      filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur stdDeviation="0.8" /></filter></svg>#filter');
+      -webkit-filter: blur(0.8px);
+      filter: blur(0.8px);
+      webkit-filter: blur(0.8px);
+      -webkit-transform: rotateZ(-90deg) translate3d(0, 100px, 0) scale(0.7);
+      transform: rotateZ(-90deg) translate3d(0, 100px, 0) scale(0.7);
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    }
+
+    .log-in-card.turned {
+      filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur stdDeviation="1" /></filter></svg>#filter');
+      -webkit-filter: blur(1px);
+      filter: blur(1px);
+      webkit-filter: blur(1px);
+      -webkit-transform: rotateZ(-90deg) translateX(0px) translateY(100px) scale(0.7);
+      transform: rotateZ(-90deg) translateX(0px) translateY(100px) scale(0.7);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    }
+
+    .animation-state-1 .sign-up-card.below {
+      -webkit-transform: rotateZ(-7deg) translateY(150px) scale(0.78);
+      transform: rotateZ(-7deg) translateY(150px) scale(0.78);
+      opacity: 1;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+      filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur stdDeviation="0.4" /></filter></svg>#filter');
+      -webkit-filter: blur(0.4px);
+      filter: blur(0.4px);
+      webkit-filter: blur(0.4px);
+    }
+    .animation-state-1 .log-in-card.above {
+      -webkit-transform: rotateZ(-83deg) translateY(-180px) translateX(100px) scale(0.78);
+      transform: rotateZ(-83deg) translateY(-180px) translateX(100px) scale(0.78);
+      opacity: 1;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+      filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur stdDeviation="0.5" /></filter></svg>#filter');
+      -webkit-filter: blur(0.5px);
+      filter: blur(0.5px);
+      webkit-filter: blur(0.5px);
+    }
+
+    .animation-state-finish .sign-up-card.above {
+      -webkit-transform-origin: left top;
+      transform-origin: left top;
+      -webkit-transform: rotateZ(5deg) translateY(0px) scale(1);
+      transform: rotateZ(5deg) translateY(0px) scale(1);
+      opacity: 1;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+      filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur stdDeviation="0" /></filter></svg>#filter');
+      -webkit-filter: blur(0);
+      filter: blur(0);
+      webkit-filter: blur(0);
+    }
+    .animation-state-finish .log-in-card.below {
+      -webkit-transform: rotateZ(-90deg) translateX(0px) translateY(100px) scale(0.7);
+      transform: rotateZ(-90deg) translateX(0px) translateY(100px) scale(0.7);
+      opacity: 0.8;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+      filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur stdDeviation="1" /></filter></svg>#filter');
+      -webkit-filter: blur(1px);
+      filter: blur(1px);
+      webkit-filter: blur(1px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    }
+
+    .animation-state-1 .log-in-card.below {
+      -webkit-transform: rotateZ(-10deg) translateY(180px) scale(0.78);
+      transform: rotateZ(-10deg) translateY(180px) scale(0.78);
+      opacity: 1;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+      filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur stdDeviation="0.5" /></filter></svg>#filter');
+      -webkit-filter: blur(0.5px);
+      filter: blur(0.5px);
+      webkit-filter: blur(0.5px);
+    }
+    .animation-state-1 .sign-up-card.above {
+      -webkit-transform: rotateZ(-80deg) translateY(-170px) translateX(100px) scale(0.78);
+      transform: rotateZ(-80deg) translateY(-170px) translateX(100px) scale(0.78);
+      opacity: 1;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+      filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur stdDeviation="0.4" /></filter></svg>#filter');
+      -webkit-filter: blur(0.4px);
+      filter: blur(0.4px);
+      webkit-filter: blur(0.4px);
+    }
+
+    .animation-state-finish .log-in-card.above {
+      -webkit-transform-origin: left top;
+      transform-origin: left top;
+      -webkit-transform: rotateZ(5deg) translateY(0px) scale(1);
+      transform: rotateZ(5deg) translateY(0px) scale(1);
+      opacity: 1;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+      filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur stdDeviation="0" /></filter></svg>#filter');
+      -webkit-filter: blur(0);
+      filter: blur(0);
+      webkit-filter: blur(0);
+    }
+    .animation-state-finish .sign-up-card.below {
+      filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur stdDeviation="0.4" /></filter></svg>#filter');
+      -webkit-filter: blur(0.4px);
+      filter: blur(0.4px);
+      webkit-filter: blur(0.4px);
+      -webkit-transform: rotateZ(-90deg) translate3d(0, 100px, 0) scale(0.7);
+      transform: rotateZ(-90deg) translate3d(0, 100px, 0) scale(0.7);
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+      opacity: 0.7;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+    }
+
+  </style>
+</head>
+<body class="bg-light">
+  <div class="container-fluid d-flex justify-content-center mt-5 mb-2">
+    <div class="form-collection">
+    <div class="card elevation-3 limit-width log-in-card above">
+      <div class="card-header text-center p-1">
+        <img src="assets/images/logotrans.png" height="70px" width="auto">
+      </div>
+      <div class="card-body">
+        <div class="input-group email">
+          <input type="text" placeholder="Email"/>
+        </div>
+        <div class="input-group password">
+          <input type="password" placeholder="Password"/>
+        </div>
+        <!-- <a href="#" class="box-btn">Forgot Password?</a> -->
+      </div>
+      <div class="card-footer">
+        <button type="submit" class="login-btn">Log in</button>
+      </div>
+    </div>
+
+    <div class="card elevation-2 limit-width sign-up-card below turned">
+      <div class="card-header text-center p-1">
+        <img src="assets/images/logotrans.png" height="70px" width="auto">
+      </div>
+      <div class="card-body">
+        <div class="input-group fullname">
+          <input type="text" placeholder="Full Name"/>
+        </div>
+        <div class="input-group email">
+          <input type="email" placeholder="Email"/>
+        </div>
+        <div class="input-group mobile">
+          <input type="number" placeholder="Mobile no"/>
+        </div>
+        <div class="input-group password">
+          <input type="password" placeholder="Password"/>
+        </div>
+      </div>
+      <div class="card-footer">
+        <button type="submit" class="signup-btn">Sign Up</button>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+<!-- script files -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="assets/lib/crs.min.js"></script>
+  <script src="assets/lib/script.js"></script>
+  <script type="text/javascript">
+    $(document).on('click', '.below button', function(){
+      var belowCard = $('.below'),
+      aboveCard = $('.above'),
+      parent = $('.form-collection');
+      parent.addClass('animation-state-1');
+      setTimeout(function(){
+        belowCard.removeClass('below');
+        aboveCard.removeClass('above');
+        belowCard.addClass('above');
+        aboveCard.addClass('below');
+        setTimeout(function(){
+          parent.addClass('animation-state-finish');
+          parent.removeClass('animation-state-1');
+          setTimeout(function(){
+            aboveCard.addClass('turned');
+            belowCard.removeClass('turned');
+            parent.removeClass('animation-state-finish');
+          }, 300)
+        }, 10)
+      }, 300);
+    });
+  </script>
+</body>
+</html>
