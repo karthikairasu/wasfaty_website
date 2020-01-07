@@ -19,6 +19,7 @@
     }
     .main .navbar{
       position: fixed!important;
+      width: 87%;
     }
     .sidenav .list-group-item {
       position: relative;
