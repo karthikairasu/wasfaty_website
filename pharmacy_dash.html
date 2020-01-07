@@ -10,84 +10,11 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed|Titillium+Web|Changa|Merriweather|Ubuntu&display=swap" rel="stylesheet">
   <link rel="manifest" href="assets/lib/manifest.json">
   <link rel="stylesheet" type="text/css" href="assets/lib/style.css">
+  <link rel="stylesheet" type="text/css" href="assets/lib/style2.css">
   <!--------table style lib------------------------>
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
   <style type="text/css">
-    .main{
-      height: 100%;
-      position: fixed;
-      width: 85%;
-      left: 15%;
-      overflow-y: auto;
-      background: #a4b5c5;
-    }
-    .sidenav{
-      height: 100%;
-      position: fixed;
-      width:15%;
-      z-index: 99!important;
-    }
-    .sidenav .list-group-item {
-      position: relative;
-      display: block;
-      padding: .75rem 1.25rem;
-      margin-bottom: -1px;
-      background-color: #e2e2e2;
-      border: none;
-      font-weight: 600;
-      color: #1f73d8;
-    }
-    .sidenav .list-group-item.active {
-        color: #495057;
-        text-decoration: none;
-        background-color: #f8f9fa;
-        padding-left: 30px;
-        font-weight: 600;
-    }
-    .sidenav .list-group-item:hover {
-        color: #495057;
-        text-decoration: none;
-        background-color: #f8f9fa;
-        padding-left: 30px;
-    }
-    .topsecnav{
-        position: fixed;
-        top:76px;
-        left: 15%;
-        width: 100%;
-        background: white;
-        z-index: 99!important;
-        overflow-x: auto;
-        margin-right: 40px;
-    }
-    .topsecnav .navbar-nav .nav-link {
-        padding :1px 25px; 
-    }
-    .topsecnav .navbar-nav .nav-item .nav-link:hover{
-        background: #92b3d2!important;
-        color: white!important;
-    }
-    .topsecnav .navbar-nav .nav-item.active > .nav-link {
-        background: #92b3d2!important;
-        color: white!important;
-    }
-    .topsecnav .navbar-nav{
-        text-align: center;
-    }
-    #example_wrapper{
-        width: 100%;
-        font-size: 12px;
-        text-align: center;
-    }
-    #example_wrapper .table th, .table td {
-        padding: 4px 2px;
-        vertical-align: top;
-        border-top: 1px solid #dee2e6;
-    }
-    #example_wrapper table th {
-        background: lightgray;
-    }
     table.dataTable thead .sorting:first-child:before, table.dataTable thead .sorting_asc:first-child:before, table.dataTable thead .sorting_desc:first-child:before, table.dataTable thead .sorting_asc_disabled:first-child:before, table.dataTable thead .sorting_desc_disabled:first-child:before{
     display: none;
    }
@@ -97,9 +24,9 @@
   </style>
 </head>
 <body class="bg-light">
-  <nav class="navbar fixed-top navbar-light bg-white cus-shadow px-2 py-0" style="border-top: 4px solid #00BCD4;">
+  <nav class="navbar fixed-top navbar-light bg-white topnav px-2 py-0">
    <div class="col-4">
-       <a class="navbar-brand py-0" href="pharmacy_dash.html">
+       <a class="navbar-brand py-3" href="pharmacy_dash.html">
          <img src="assets/images/logo.png" height="70px" width="auto">
        </a>
    </div>
@@ -107,23 +34,29 @@
       <!-- <a class="ml-auto" href="home.html"><img class="" src="assets/images/logo_2.png" style="width:150px;height: 38px"></a> -->
     </div>
     <div class="col-4 text-right" style="font-size: 11px;font-weight: 600"> 
-        <img class="my-1" src="assets/images/NUPCO-LOGO.png" height="40px" width="auto"><br>
-        <span style="color:#197c89">White Pharmacy</span> |
+        <img class="" src="assets/images/NUPCO-LOGO.png" height="40px" width="auto" style="margin:20px 10px"><br>
+        
+        <span class="dropdown">
+          <span class="dropdown-toggle" data-toggle="dropdown" style="color:#197c89">White Pharmacy</span> |
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Logout</a>
+          </div>
+        </span>
         <span style="color:#197c89;">White Pharmacy</span> |
         <span style="color:#8a8c8d;">Cycle end Dec 31</span> |
         <span style="color:#8a8c8d;">Help</span>
     </div>
-  </nav><br><br><br>
+  </nav><br><br><br><br>
 <div class="container-fluid px-0">
   <div class="row mx-0">
-    <div class="sidenav px-0 bg-grey">
+    <div class="sidenav px-0 mt-2 bg-grey">
       <ul class="list-group">
-        <li  class="list-group-item bg-white" style="padding: 18px 20px;">
+        <li  class="list-group-item bg-white" style="padding: 18px 20px;font-size: 16px">
           <i class="fas fa-minus-square"></i></li>
-        <li  class="list-group-item active my-2">Invoice List</li>
-        <li class="list-group-item">Medical List</li>
-        <li class="list-group-item">Inventory</li>
-        <li class="list-group-item">Sales</li>
+        <li  class="list-group-item active my-1">Invoice List</li>
+        <li class="list-group-item mb-1">Medical List</li>
+        <li class="list-group-item mb-1">Inventory</li>
+        <li class="list-group-item mb-1">Sales</li>
     </ul>
     </div>
     <div class="main px-3 py-5">
@@ -173,8 +106,8 @@
           </ul>
         </div>
       </nav>
-      <div class="container bg-white my-4" style="height: 90%;">
-
+      <div class="container-fluid main_content bg-white p-2">
+        
         <div class="row mx-0">
           <div class="col-md-9">
             <table id="example" class="table table-striped table-bordered" style="width:100%">
