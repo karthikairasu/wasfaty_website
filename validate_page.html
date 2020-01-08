@@ -10,139 +10,70 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed|Titillium+Web|Changa|Merriweather|Ubuntu&display=swap" rel="stylesheet">
   <link rel="manifest" href="assets/lib/manifest.json">
   <link rel="stylesheet" type="text/css" href="assets/lib/style.css">
+  <link rel="stylesheet" type="text/css" href="assets/lib/style2.css">
   <!--------table style lib------------------------>
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
   <style type="text/css">
-    .main{
-      height: 100%;
-      position: fixed;
-      width: 85%;
-      left: 15%;
-      overflow-y: auto;
-      background: #a4b5c5;
+    #example .bg_color{
+        background-color: steelblue!important;
+        color: #fff!important;
     }
-    .sidenav{
-      height: 100%;
-      position: fixed;
-      width:15%;
-      z-index: 99!important;
+    #example_wrapper .table .bg_color th {
+        background-color: steelblue!important;
+        color: #fff!important;
     }
-    .sidenav .list-group-item {
-      position: relative;
-      display: block;
-      padding: .75rem 1.25rem;
-      margin-bottom: -1px;
-      background-color: #e2e2e2;
-      border: none;
-      font-weight: 600;
-      color: #1f73d8;
+    #example_wrapper .table tr:nth-child(1) th {
+        background-color: white!important;
     }
-    .sidenav .list-group-item.active {
-        color: #495057;
-        text-decoration: none;
-        background-color: #f8f9fa;
-        padding-left: 30px;
-        font-weight: 600;
+    #example_wrapper .table{
+       font-size: 11px;
     }
-    .sidenav .list-group-item:hover {
-        color: #495057;
-        text-decoration: none;
-        background-color: #f8f9fa;
-        padding-left: 30px;
-    }
-    .topsecnav{
-        position: fixed;
-        top:76px;
-        left: 15%;
-        width: 100%;
-        background: white;
-        z-index: 99!important;
-        overflow-x: auto;
-        margin-right: 40px;
-    }
-    .topsecnav .navbar-nav .nav-link {
-        padding :1px 25px; 
-    }
-    .topsecnav .navbar-nav .nav-item .nav-link:hover{
-        background: #92b3d2!important;
-        color: white!important;
-    }
-    .topsecnav .navbar-nav .nav-item.active > .nav-link {
-        background: #92b3d2!important;
-        color: white!important;
-    }
-    .topsecnav .navbar-nav{
-        text-align: center;
-    }
-    #example_wrapper{
-        width: 100%;
-        font-size: 12px;
-        text-align: center;
-    }
-    #example_wrapper .table th, .table td {
-        padding: 4px 2px;
-        vertical-align: top;
-        border-top: 1px solid #dee2e6;
-    }
-
-
-
-    .main_content{
-        position: fixed;
-        height: 510px;
-    }
-    .table_row{
-        height: 465px;
-        overflow: scroll;
-    }
-    .table_row table{
-        width:100%;
-        font-size: 11px;
-    }
-    .table_row table.table-bordered.dataTable tbody th,.table_row table.table-bordered.dataTable tbody td{
-        vertical-align: middle;
-    }
-    .table_row table.dataTable thead .sorting:before, .table_row table.dataTable thead .sorting_asc:before, .table_row table.dataTable thead .sorting_desc:before, .table_row table.dataTable thead .sorting_asc_disabled:before, .table_row table.dataTable thead .sorting_desc_disabled:before{
+    table.dataTable thead .sorting:before, table.dataTable thead .sorting_asc:before, table.dataTable thead .sorting_desc:before, table.dataTable thead .sorting_asc_disabled:before, table.dataTable thead .sorting_desc_disabled:before { 
         right: 1px;
     }
-    .table_row table tr.bg_color{
-        background-color: steelblue;
-        color: #fff;
+    .bg-blue{
+      background: #3276b1!important;
     }
   </style>
 </head>
 <body class="bg-light">
-  <nav class="navbar fixed-top navbar-light bg-white cus-shadow px-2 py-0" style="border-top: 4px solid #00BCD4;">
+   <nav class="navbar fixed-top navbar-light bg-white topnav px-2 py-0">
    <div class="col-4">
-       <a class="navbar-brand py-0" href="pharmacy_dash.html">
+       <a class="navbar-brand py-3" href="pharmacy_dash.html">
          <img src="assets/images/logo.png" height="70px" width="auto">
        </a>
    </div>
     <div class="col-4">
       <!-- <a class="ml-auto" href="home.html"><img class="" src="assets/images/logo_2.png" style="width:150px;height: 38px"></a> -->
     </div>
-    <div class="col-4 text-right" style="font-size: 11px; font-weight: 600"> 
-        <img class="my-1" src="assets/images/NUPCO-LOGO.png" height="40px" width="auto"><br>
-        <span style="color:#197c89">White Pharmacy</span> |
+    <div class="col-4 text-right px-0" style="font-size: 11px;font-weight: 600;"> 
+        <img class="" src="assets/images/NUPCO-LOGO.png" height="40px" width="auto" style="margin:20px 10px"><br>
+        
+        <span class="dropdown">
+          <span class="dropdown-toggle" data-toggle="dropdown" style="color:#197c89">White Pharmacy</span> |
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Logout</a>
+          </div>
+        </span>
         <span style="color:#197c89;">White Pharmacy</span> |
         <span style="color:#8a8c8d;">Cycle end Dec 31</span> |
-        <span style="color:#8a8c8d;">help</span>
+        <span style="color:#8a8c8d;">Help</span>
     </div>
-  </nav><br><br><br>
+  </nav><br><br><br><br>
 <div class="container-fluid px-0">
   <div class="row mx-0">
-    <div class="sidenav px-0 bg-grey">
+    <div class="sidenav px-0 mt-2 bg-grey">
       <ul class="list-group">
-        <li  class="list-group-item bg-white" style="padding: 18px 20px;">
+        <li  class="list-group-item bg-white" style="padding: 18px 20px;font-size: 16px">
           <i class="fas fa-minus-square"></i></li>
-        <li  class="list-group-item active my-2">Invoice List</li>
-        <li class="list-group-item">Medical List</li>
-        <li class="list-group-item">Inventory</li>
-        <li class="list-group-item">Sales</li>
-    </ul>
+        <li  class="list-group-item active my-1">Invoice List</li>
+        <li class="list-group-item mb-1">Medical List</li>
+        <li class="list-group-item mb-1">Inventory</li>
+        <li class="list-group-item mb-1">Sales</li>
+      </ul>
     </div>
-    <div class="main px-2 py-5">
+    <div class="main px-3 py-5">
       <nav class="navbar navbar-expand navbar-light bg-white shadow topsecnav py-0 px-0">
         <a class="navbar-brand mr-0" href="#" style=""></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -152,12 +83,12 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="pharmacy_dash.html">
+              <a class="nav-link" href="#">
                 <img src="assets/images/invoice.png" style="height:30px;width:auto;"> <br> 
                 Invoices</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="billing_page.html">
+              <a class="nav-link" href="#">
               <img src="assets/images/billing.png" style="height:30px;width:auto;"><br> 
               Billing</a>
             </li>
@@ -181,26 +112,32 @@
               <img src="assets/images/analytics.png" style="height:30px;width:auto;"><br> 
               Analytics</a>
             </li>
-            <li class="nav-item" style="margin-right:100px;">
+           <!--  <li class="nav-item">
               <a class="nav-link" href="#">
               <img src="assets/images/market.png" style="height:30px;width:auto;"><br> 
               Marketplace</a>
-            </li>
+            </li> -->
           </ul>
+          <ul class="navbar-nav ml-auto">
+          <li class="nav-item px-2">
+            <a class="btn btn-primary" target="_blank" href="http://ros.nupco.com" style="background: #3276b1">Supplier Register</a>
+          </li>
+        </ul>
         </div>
       </nav>
-      <div class="container my-4 mr-3 main_content bg-white">
+      <div class="container main_content bg-white p-2">
         <div class="row">
           <div class="col-11 text-center">
             <h5 class="mb-0" style="color: steelblue">Whites Pharmacy - Sep 2019-01</h5>
           </div>
           <div class="col-1"></div>
         </div>
-        <div class="row mt-2 table_row">
+        <div class="col-12 text-center">
           <table id="example" class="table table-striped table-bordered">
             <thead>
               <tr>
                 <th></th>
+                <th>الحالة</th>
                 <th>رقم الفاتورة</th>
                 <th>تاريخ الفاتورة</th>
                 <th>كود الرازي</th>
@@ -216,10 +153,10 @@
                 <th>قيمه الضريبه</th>
                 <th class="text-nowrap">القيمه بعد الضريبه</th>
                 <th colspan="5"></th>
-                <th>الحالة</th>
               </tr>
               <tr class="bg_color">
                   <th>#</th>
+                  <th>Status</th>
                   <th class="text-nowrap px-1">Transaction No</th>
                   <th class="text-nowrap px-1">Date of dispensing</th>
                   <th class="text-nowrap px-1">Item Number</th>
@@ -239,12 +176,12 @@
                   <th class="text-nowrap px-1">Margin 4%</th>
                   <th class="text-nowrap px-1">NUPCO Price</th>
                   <th class="text-nowrap px-1">Total Amount</th>
-                  <th>Status</th>
               </tr>
             </thead>
             <tbody>
                 <tr>
                     <td>1</td>
+                    <td class="bg-success">Success</td>
                     <td>24784</td>
                     <td>29/09/2019</td>
                     <td>6281080003523</td>
@@ -264,10 +201,10 @@
                     <td> - </td>
                     <td>17.320</td>
                     <td>51.960</td>
-                    <td class="bg-success">Success</td>
                 </tr>
                 <tr>
                     <td>2</td>
+                    <td class="bg-success">Success</td>
                     <td>51622</td>
                     <td>22/09/2019</td>
                     <td>6221032120151</td>
@@ -287,10 +224,10 @@
                     <td> - </td>
                     <td>4.080</td>
                     <td>4.080</td>
-                    <td class="bg-success">Success</td>
                 </tr>
                 <tr>
                     <td>3</td>
+                    <td class="bg-success">Success</td>
                     <td>51622</td>
                     <td>22/09/2019</td>
                     <td>6281086000250</td>
@@ -310,10 +247,10 @@
                     <td> 0.0680 </td>
                     <td>1.768</td>
                     <td>1.768</td>
-                    <td class="bg-success">Success</td>
                 </tr>
                 <tr>
                     <td>4</td>
+                    <td class="bg-success">Success</td>
                     <td>52867</td>
                     <td>28/09/2019</td>
                     <td>6281086000816</td>
@@ -333,10 +270,10 @@
                     <td> 0.0760 </td>
                     <td>1.976</td>
                     <td>1.976</td>
-                    <td class="bg-success">Success</td>
                 </tr>
                 <tr>
                     <td>5</td>
+                    <td class="bg-success">Success</td>
                     <td>51269</td>
                     <td>20/09/2019</td>
                     <td>917713</td>
@@ -356,10 +293,10 @@
                     <td> - </td>
                     <td>29.320</td>
                     <td>29.320</td>
-                    <td class="bg-success">Success</td>
                 </tr>
                 <tr>
                     <td>6</td>
+                    <td class="bg-success">Success</td>
                     <td>52027</td>
                     <td>24/09/2019</td>
                     <td>1278134</td>
@@ -379,7 +316,6 @@
                     <td> 1.6800 </td>
                     <td>43.680</td>
                     <td>43.680</td>
-                    <td class="bg-success">Success</td>
                 </tr>
 
 
@@ -387,6 +323,7 @@
                 <!----- Dummy  ------>
                 <tr>
                     <td>7</td>
+                    <td class="bg-success">Success</td>
                     <td>24784</td>
                     <td>29/09/2019</td>
                     <td>6281080003523</td>
@@ -406,10 +343,10 @@
                     <td> - </td>
                     <td>17.320</td>
                     <td>51.960</td>
-                    <td class="bg-success">Success</td>
                 </tr>
                 <tr>
                     <td>8</td>
+                    <td class="bg-success">Success</td>
                     <td>51622</td>
                     <td>22/09/2019</td>
                     <td>6221032120151</td>
@@ -429,10 +366,10 @@
                     <td> - </td>
                     <td>4.080</td>
                     <td>4.080</td>
-                    <td class="bg-success">Success</td>
                 </tr>
                 <tr>
                     <td>9</td>
+                    <td class="bg-success">Success</td>
                     <td>51622</td>
                     <td>22/09/2019</td>
                     <td>6281086000250</td>
@@ -452,10 +389,10 @@
                     <td> 0.0680 </td>
                     <td>1.768</td>
                     <td>1.768</td>
-                    <td class="bg-success">Success</td>
                 </tr>
                 <tr>
                     <td>10</td>
+                    <td class="bg-success">Success</td>
                     <td>52867</td>
                     <td>28/09/2019</td>
                     <td>6281086000816</td>
@@ -475,10 +412,10 @@
                     <td> 0.0760 </td>
                     <td>1.976</td>
                     <td>1.976</td>
-                    <td class="bg-danger">Error</td>
                 </tr>
                 <tr>
                     <td>11</td>
+                    <td class="bg-danger">Error</td>
                     <td>51269</td>
                     <td>20/09/2019</td>
                     <td>917713</td>
@@ -498,10 +435,10 @@
                     <td> - </td>
                     <td>29.320</td>
                     <td>29.320</td>
-                    <td class="bg-danger">Error</td>
                 </tr>
                 <tr>
                     <td>12</td>
+                    <td class="bg-danger">Error</td>
                     <td>52027</td>
                     <td>24/09/2019</td>
                     <td>1278134</td>
@@ -521,9 +458,9 @@
                     <td> 1.6800 </td>
                     <td>43.680</td>
                     <td>43.680</td>
-                    <td class="bg-danger">Error</td>
                 </tr><tr>
                     <td>13</td>
+                    <td class="bg-success">Success</td>
                     <td>24784</td>
                     <td>29/09/2019</td>
                     <td>6281080003523</td>
@@ -543,10 +480,10 @@
                     <td> - </td>
                     <td>17.320</td>
                     <td>51.960</td>
-                    <td class="bg-success">Success</td>
                 </tr>
                 <tr>
                     <td>14</td>
+                    <td class="bg-success">Success</td>
                     <td>51622</td>
                     <td>22/09/2019</td>
                     <td>6221032120151</td>
@@ -566,10 +503,10 @@
                     <td> - </td>
                     <td>4.080</td>
                     <td>4.080</td>
-                    <td class="bg-success">Success</td>
                 </tr>
                 <tr>
                     <td>15</td>
+                    <td class="bg-success">Success</td>
                     <td>51622</td>
                     <td>22/09/2019</td>
                     <td>6281086000250</td>
@@ -589,10 +526,10 @@
                     <td> 0.0680 </td>
                     <td>1.768</td>
                     <td>1.768</td>
-                    <td class="bg-success">Success</td>
                 </tr>
                 <tr>
                     <td>16</td>
+                    <td class="bg-danger">Error</td>
                     <td>52867</td>
                     <td>28/09/2019</td>
                     <td>6281086000816</td>
@@ -612,10 +549,10 @@
                     <td> 0.0760 </td>
                     <td>1.976</td>
                     <td>1.976</td>
-                    <td class="bg-danger">Error</td>
                 </tr>
                 <tr>
                     <td>17</td>
+                    <td class="bg-danger">Error</td>
                     <td>51269</td>
                     <td>20/09/2019</td>
                     <td>917713</td>
@@ -635,10 +572,10 @@
                     <td> - </td>
                     <td>29.320</td>
                     <td>29.320</td>
-                    <td class="bg-danger">Error</td>
                 </tr>
                 <tr>
                     <td>18</td>
+                    <td class="bg-danger">Error</td>
                     <td>52027</td>
                     <td>24/09/2019</td>
                     <td>1278134</td>
@@ -658,9 +595,9 @@
                     <td> 1.6800 </td>
                     <td>43.680</td>
                     <td>43.680</td>
-                    <td class="bg-danger">Error</td>
                 </tr><tr>
                     <td>19</td>
+                    <td class="bg-success">Success</td>
                     <td>24784</td>
                     <td>29/09/2019</td>
                     <td>6281080003523</td>
@@ -680,10 +617,10 @@
                     <td> - </td>
                     <td>17.320</td>
                     <td>51.960</td>
-                    <td class="bg-success">Success</td>
                 </tr>
                 <tr>
                     <td>20</td>
+                    <td class="bg-success">Success</td>
                     <td>51622</td>
                     <td>22/09/2019</td>
                     <td>6221032120151</td>
@@ -703,10 +640,10 @@
                     <td> - </td>
                     <td>4.080</td>
                     <td>4.080</td>
-                    <td class="bg-success">Success</td>
                 </tr>
                 <tr>
                     <td>21</td>
+                    <td class="bg-success">Success</td>
                     <td>51622</td>
                     <td>22/09/2019</td>
                     <td>6281086000250</td>
@@ -726,10 +663,10 @@
                     <td> 0.0680 </td>
                     <td>1.768</td>
                     <td>1.768</td>
-                    <td class="bg-success">Success</td>
                 </tr>
                 <tr>
                     <td>22</td>
+                    <td class="bg-danger">Error</td>
                     <td>52867</td>
                     <td>28/09/2019</td>
                     <td>6281086000816</td>
@@ -749,10 +686,10 @@
                     <td> 0.0760 </td>
                     <td>1.976</td>
                     <td>1.976</td>
-                    <td class="bg-danger">Error</td>
                 </tr>
                 <tr>
                     <td>23</td>
+                    <td class="bg-danger">Error</td>
                     <td>51269</td>
                     <td>20/09/2019</td>
                     <td>917713</td>
@@ -772,10 +709,10 @@
                     <td> - </td>
                     <td>29.320</td>
                     <td>29.320</td>
-                    <td class="bg-danger">Error</td>
                 </tr>
                 <tr>
                     <td>24</td>
+                    <td class="bg-danger">Error</td>
                     <td>52027</td>
                     <td>24/09/2019</td>
                     <td>1278134</td>
@@ -795,7 +732,6 @@
                     <td> 1.6800 </td>
                     <td>43.680</td>
                     <td>43.680</td>
-                    <td class="bg-danger">Error</td>
                 </tr>
 
 
