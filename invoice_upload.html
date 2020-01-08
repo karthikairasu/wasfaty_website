@@ -99,6 +99,17 @@
       border: 1px solid #323a44;
       margin: 10px 5px 0 0;
     }
+    .hidden {
+      display: none;
+    }
+    .fright{
+      float: right;
+    }
+    ul, li {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
   </style>
 </head>
 <body class="bg-light">
@@ -208,9 +219,9 @@
             </div>
           </div>
           <div class="col-md-6">
-            <div class="card mt-4 bg-grey border-0 p-3">
+            <div class="card bg-grey border-0 p-3" style="margin-top: 77px">
               <h6 class="text-center"><strong>Upload Files</strong></h6>
-              <div class="card border-0 p-5" style="height: 200px">
+              <!-- <div class="card border-0 p-5" style="height: 200px">
                 <div class="wrapper">
                   <div class="drop">
                     <div class="cont">
@@ -228,9 +239,20 @@
                     <output id="list"></output><input id="files" multiple="true" name="files[]" type="file" />
                   </div>
                 </div>
-              </div>
+              </div> -->
+              <div class="hidden-inputs7 hidden"></div>
+              
               <div class="card border-0 p-2 bg-white mt-2" style="height: 80px">
-                
+                <div class="px-2 file-chooser7" >
+                  <ul class="detail7">
+                  
+                  </ul>
+                  <ul>
+                    <li>
+                      <input type="file" name="curriculum_vitae[]"  class="inputfile inputfile-3 curriculum_vitae" onChange="validate1(this.value,'curriculum_vitae','7','#curriculum_vitae_check')" multiple="multiple" />
+                    </li>
+                  </ul> 
+                </div>
               </div>
               <div class="form-group text-center my-1">
                 <a href="invoice_list.html" class="btn btn-primary"><i class="fas fa-cloud-upload-alt"></i> Upload</a>
@@ -324,6 +346,56 @@ function handleFileSelect(evt) {
 }
 
 $('#files').change(handleFileSelect);
+
+var uploadId= 1;
+    function validate1(file,input_class,show_chk,chk_val) {
+      file1 = $("."+input_class).prop('files')[0];
+      pdffile_url=URL.createObjectURL(file1);
+      var fileName = (file.match(/([^\\\/]+)$/)[0]);
+      var img_id = "'"+input_class+uploadId+"'";
+      var imgurl = "'"+pdffile_url+"'";
+    if(file !== ''){
+      var ext = file.split(".");
+      ext = ext[ext.length-1].toLowerCase();      
+      var imgtype = "'"+ext+"'";
+      var arrayExtensions = ["jpg" , "jpeg", "png", "bmp", "gif", "pdf"];
+      if (arrayExtensions.lastIndexOf(ext) == -1 && ext !=='') {
+          alert("Wrong extension type.");
+          $('.'+input_class).css("display", "");
+          $("#save").attr("disabled", true);
+          $("#right"+show_chk).css("display", "none");
+          $("#wrong"+show_chk).css("display", "");
+          $(chk_val).val('0');
+          //$('#curriculum_vitae').val("");
+      }else{
+          $("#right"+show_chk).css("display", "");
+          $("#wrong"+show_chk).css("display", "none");
+          $(chk_val).val('1');
+          $(".hidden-inputs"+show_chk).append($('.'+input_class));
+          $('.file-chooser'+show_chk).append($('.'+input_class).clone({ withDataAndEvents: true}));
+          $('.detail'+show_chk).append('<li style="height:39px;" class='+img_id+'><span>'+fileName+'</span><span class="fright"><button type="button" class="btn btn-info btn-sm m-1" onclick="PreviewImage1('+imgurl+','+imgtype+')"> View</button><button type="button" class="btn btn-danger btn-sm m-1" onclick="remove_file1('+img_id+')">Cancel</button></span></li>');
+          $('.detail'+show_chk).find("li:last").show(800);
+          $('.hidden-inputs'+show_chk+' .'+input_class).attr('id', input_class+uploadId);
+          $('.hidden-inputs'+show_chk+' .'+input_class).removeClass(input_class); 
+
+          $('.'+input_class).val(''); 
+          uploadId++;
+      }
+    }
+  }
+  function PreviewImage1(url,type) {
+    if(type== 'pdf'){
+      $('#viewer').attr('src',url);
+      $('#viewer1').val(url);
+      $('#viewer').css('display',"")
+      $('#show_image1').css('display',"none");
+    }else{
+      $('#viewer').css('display',"none");
+      $('#show_image1').attr('src',url);
+      $('#show_image1').css('display',"");
+    }
+    $('#view1').modal('show');
+  }
   </script>
 </body>
 </html>
