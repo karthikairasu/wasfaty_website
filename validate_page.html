@@ -38,7 +38,7 @@
   </style>
 </head>
 <body class="bg-light">
-   <nav class="navbar fixed-top navbar-light bg-white topnav px-2 py-0">
+  <nav class="navbar fixed-top navbar-light bg-white topnav px-2 py-0">
    <div class="col-4">
        <a class="navbar-brand py-3" href="pharmacy_dash.html">
          <img src="assets/images/logo.png" height="70px" width="auto">
@@ -48,8 +48,21 @@
       <!-- <a class="ml-auto" href="home.html"><img class="" src="assets/images/logo_2.png" style="width:150px;height: 38px"></a> -->
     </div>
     <div class="col-4 text-right px-0" style="font-size: 11px;font-weight: 600;"> 
-        <img class="" src="assets/images/NUPCO-LOGO.png" height="40px" width="auto" style="margin:20px 10px"><br>
-        
+      <div class="row">
+         <div class="col-8 px-0 py-3">
+           <div class="float-right pt-2">
+            <form name="lang_switch" id="lang_switch">
+              <select name="lang" id="lang" class="form-control" style="box-shadow: none!important; border: 2px solid #45CBD3;">
+                <option value="english">English</option>
+                <option value="arabic">Arabic</option>
+              </select>
+            </form>
+          </div>
+         </div>
+         <div class="col-4">
+           <img class="" src="assets/images/NUPCO-LOGO.png" height="40px" width="auto" style="margin:20px 10px">
+         </div>
+      </div>
         <span class="dropdown">
           <span class="dropdown-toggle" data-toggle="dropdown" style="color:#197c89">White Pharmacy</span> |
           <div class="dropdown-menu">
@@ -111,6 +124,11 @@
               <a class="nav-link" href="#">
               <img src="assets/images/analytics.png" style="height:30px;width:auto;"><br> 
               Analytics</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+              <img src="assets/images/logout.png" style="height:30px;width:auto;"><br> 
+              Logout</a>
             </li>
            <!--  <li class="nav-item">
               <a class="nav-link" href="#">
